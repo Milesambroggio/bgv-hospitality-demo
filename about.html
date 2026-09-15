@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About BGV | BGV Hospitality</title>
+<meta name="description" content="Breckenridge Grand Vacations has hosted Colorado families since 1984. BGV Hospitality extends that operating experience to Skjól and the Imperial.">
+<link rel="icon" href="img/bgv_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft">Draft for review</div>
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="light" src="img/bgv_logo_white.png" alt="Breckenridge Grand Vacations">
+      <img class="dark" src="img/bgv_logo.png" alt="Breckenridge Grand Vacations">
+      <span class="hosp">Hospitality</span>
+    </a>
+    <nav class="links"><a href="skjol.html">Skjól</a><a href="imperial.html">Imperial</a><a href="experiences.html">Experiences</a><a href="owners.html">Owners</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a></nav>
+    <div class="cta">
+      <a class="btn light sm" href="contact.html?intent=stay">Book a stay</a>
+      <button class="hamb" aria-label="Menu">≡</button>
+    </div>
+  </div>
+</header>
+<section class="pagehero" style="background-image:url('img/breck_town.jpg')">
+  <div class="wrap">
+    <div class="kicker">About BGV</div>
+    <h1>Bringing families together and sharing smiles since 1984.</h1>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap grid">
+    <img src="img/imp_lounge.jpg" alt="Imperial lounge">
+    <div>
+      <div class="kicker">About BGV</div>
+      <h2>A Colorado developer and operator, four decades in.</h2>
+      <p class="lede" style="margin-top:18px">Breckenridge Grand Vacations is a Colorado-based real estate developer and property manager, and the parent company of Grand Timber Lodge, Grand Lodge on Peak 7, Grand Colorado on Peak 8 and the Breck Inn. BGV Hospitality extends that operating experience to the private residences at Skjól and the Imperial, with a team recognized as a national Top Workplaces award winner.</p>
+      <div class="resorts"><span>Grand Timber Lodge</span><span>Grand Lodge on Peak 7</span><span>Grand Colorado on Peak 8</span><span>Imperial Hotel &amp; Private Residences</span><span>Skjól</span></div>
+      <div style="margin-top:32px"><a class="btn" href="https://breckenridgegrandvacations.com" target="_blank" rel="noopener">Breckenridge Grand Vacations</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">How we operate</div>
+    <h2>The same team, whether you are the owner or the guest.</h2>
+    <div class="types" style="margin-top:40px">
+      <div class="type"><h4>On site, every day</h4><p>BGV Hospitality is the sole on-site property manager at Skjól and the Imperial: association and building management, front desk, housekeeping and engineering under one roof.</p></div>
+      <div class="type"><h4>Hotel standards</h4><p>The Imperial is a member of The Leading Hotels of the World. Housekeeping, linen and guest service at both properties run to that standard.</p></div>
+      <div class="type"><h4>Local reservations</h4><p>Bookings are answered by a reservations team in Breckenridge seven days a week, backed by revenue management and distribution across the top travel sites.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h3>Talk to BGV Hospitality.</h3>
+      <p>Guests, owners and buyers all start in the same place.</p>
+    </div>
+    <div class="btns"><a class="btn light" href="contact.html">Contact</a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logo" src="img/bgv_logo_white.png" alt="Breckenridge Grand Vacations">
+        <p>BGV Hospitality operates the private residences at Skjól, Avon and the Imperial Hotel &amp; Private Residences, Breckenridge.</p>
+      </div>
+      <div><h5>Stay</h5><a href="skjol.html">Skjól, Avon</a><a href="imperial.html">Imperial, Breckenridge</a><a href="experiences.html">Experiences</a><a href="contact.html?intent=stay">Book a stay</a></div>
+      <div><h5>Owners</h5><a href="owners.html#rental">Rental &amp; Homecare</a><a href="owners.html#homecare">Homecare only</a><a href="owners.html#fees">Fees and programs</a><a href="owners.html#enroll">Enroll</a></div>
+      <div><h5>BGV</h5><a href="https://breckenridgegrandvacations.com" target="_blank" rel="noopener">Breckenridge Grand Vacations</a><a href="https://skjolavon.com" target="_blank" rel="noopener">SkjolAvon.com</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="fine">&copy; 2026 Peak Resorts Management LLC, dba Breckenridge Grand Vacations, and BGV Hospitality, LLC. Renderings and photography are representative only. Skjól is under development and is not yet complete; all amenities, features and information are illustrative and may change without notice. This is not an offer to sell nor the solicitation of an offer to purchase. Draft website for internal review.</div>
+  </div>
+</footer>
+<script>
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>{hdr.classList.toggle('scrolled',window.scrollY>60)};
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.querySelector('.hamb').addEventListener('click',()=>hdr.classList.toggle('open'));
+</script>
+</body>
+</html>

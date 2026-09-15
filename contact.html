@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | BGV Hospitality</title>
+<meta name="description" content="Plan a stay or talk to BGV Hospitality about your residence at Skjól or the Imperial.">
+<link rel="icon" href="img/bgv_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="draft">Draft for review</div>
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="light" src="img/bgv_logo_white.png" alt="Breckenridge Grand Vacations">
+      <img class="dark" src="img/bgv_logo.png" alt="Breckenridge Grand Vacations">
+      <span class="hosp">Hospitality</span>
+    </a>
+    <nav class="links"><a href="skjol.html">Skjól</a><a href="imperial.html">Imperial</a><a href="experiences.html">Experiences</a><a href="owners.html">Owners</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></nav>
+    <div class="cta">
+      <a class="btn light sm" href="contact.html?intent=stay">Book a stay</a>
+      <button class="hamb" aria-label="Menu">≡</button>
+    </div>
+  </div>
+</header>
+<section class="pagehero" style="background-image:url('img/summer_creek.jpg')">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h1>Plan a stay, or talk to us about your residence.</h1>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap grid">
+    <div>
+      <div class="kicker">Contact</div>
+      <h2>We answer locally, seven days a week.</h2>
+      <div class="cline" style="margin-top:28px"><b>Reservations</b>970-453-8883, seven days a week</div>
+      <div class="cline"><b>Skjól owners</b><a href="mailto:Skjol@Breckgv.com">Skjol@Breckgv.com</a></div>
+      <div class="cline"><b>Imperial owners</b><a href="mailto:ImperialChalets@Breckgv.com">ImperialChalets@Breckgv.com</a></div>
+      <div class="cline"><b>Skjól</b>255 Chapel Place, Avon, Colorado 81620</div>
+      <div class="cline"><b>Imperial</b>Peak 8, Breckenridge, Colorado 80424</div>
+    </div>
+    <form id="cform" onsubmit="event.preventDefault();alert('Draft site: form is not connected yet.')">
+      <div class="row"><input placeholder="First name" required><input placeholder="Last name" required></div>
+      <div class="row"><input type="email" placeholder="Email" required><input type="tel" placeholder="Phone"></div>
+      <select id="f_intent"><option>I am planning a stay</option><option>I own at Skjól</option><option>I own at the Imperial</option><option>I am considering buying</option></select>
+      <select id="f_dest"><option>Skjól, Avon</option><option>Imperial, Breckenridge</option><option>Either</option></select>
+      <textarea id="f_msg" rows="5" placeholder="Dates, group size, anything we should know"></textarea>
+      <button class="btn solid" type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+
+<script>
+  (function(){
+    const q=new URLSearchParams(location.search);
+    const intent=q.get('intent'), dest=(q.get('dest')||'').toLowerCase();
+    const fi=document.getElementById('f_intent'), fd=document.getElementById('f_dest'), fm=document.getElementById('f_msg');
+    if(intent==='owner') fi.selectedIndex=1;
+    if(dest.includes('imperial')) fd.selectedIndex=1; else if(dest.includes('skj')) fd.selectedIndex=0;
+    const parts=[];
+    if(q.get('in')) parts.push('Check in '+q.get('in'));
+    if(q.get('out')) parts.push('check out '+q.get('out'));
+    if(q.get('guests')) parts.push(q.get('guests'));
+    if(parts.length) fm.value=parts.join(', ')+'.';
+  })();
+</script>
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logo" src="img/bgv_logo_white.png" alt="Breckenridge Grand Vacations">
+        <p>BGV Hospitality operates the private residences at Skjól, Avon and the Imperial Hotel &amp; Private Residences, Breckenridge.</p>
+      </div>
+      <div><h5>Stay</h5><a href="skjol.html">Skjól, Avon</a><a href="imperial.html">Imperial, Breckenridge</a><a href="experiences.html">Experiences</a><a href="contact.html?intent=stay">Book a stay</a></div>
+      <div><h5>Owners</h5><a href="owners.html#rental">Rental &amp; Homecare</a><a href="owners.html#homecare">Homecare only</a><a href="owners.html#fees">Fees and programs</a><a href="owners.html#enroll">Enroll</a></div>
+      <div><h5>BGV</h5><a href="https://breckenridgegrandvacations.com" target="_blank" rel="noopener">Breckenridge Grand Vacations</a><a href="https://skjolavon.com" target="_blank" rel="noopener">SkjolAvon.com</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="fine">&copy; 2026 Peak Resorts Management LLC, dba Breckenridge Grand Vacations, and BGV Hospitality, LLC. Renderings and photography are representative only. Skjól is under development and is not yet complete; all amenities, features and information are illustrative and may change without notice. This is not an offer to sell nor the solicitation of an offer to purchase. Draft website for internal review.</div>
+  </div>
+</footer>
+<script>
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>{hdr.classList.toggle('scrolled',window.scrollY>60)};
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.querySelector('.hamb').addEventListener('click',()=>hdr.classList.toggle('open'));
+</script>
+</body>
+</html>
