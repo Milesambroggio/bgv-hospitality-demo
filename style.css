@@ -238,11 +238,13 @@
 
   /* ===== property themes (scoped to <main>) ===== */
   main.theme-skjol{
-    --navy:#413A60; --blue:#615C75; --sky:#DFDAE9; --sand:#F4F2F6; --line:#D8D8D6; --gray:#54565B; --mid:#96999A; --ink:#2B2A33;
+    --navy:#413A60; --blue:#615C75; --sky:#DFDAE9; --sand:#F4F2F6; --line:#D8D8D6; --gray:#3A3C41; --mid:#7A7D80; --ink:#26252E;
     --sans:'Avenir Next','Avenir','Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     --serif:'Nicholas',Georgia,'Times New Roman',serif;
-    font-family:var(--sans);
+    font-family:var(--sans);font-weight:400;color:var(--ink);
   }
+  main.theme-skjol p,main.theme-skjol small,main.theme-skjol .facts div span,main.theme-skjol .type p{font-weight:400}
+  main.theme-skjol .kicker,main.theme-skjol .facts div b{color:var(--blue)}
   main.theme-skjol h1,main.theme-skjol h2,main.theme-skjol h3,main.theme-skjol h4{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.08em;line-height:1.15}
   main.theme-skjol h1{font-size:clamp(30px,4.2vw,54px)}
   main.theme-skjol h2{font-size:clamp(24px,2.6vw,34px)}
