@@ -314,3 +314,23 @@
 
   @media (max-width:1000px){ .agrid{grid-template-columns:1fr 1fr} .brandbar .links{display:none} }
   @media (max-width:560px){ .agrid{grid-template-columns:1fr} .brandbar img{height:44px} }
+
+  /* properties (Oct 2026) */
+  .props{background:#fff}
+  .bookband{background:var(--sand);padding:72px 0;margin-bottom:104px}
+  .bookband .book{box-shadow:0 10px 30px rgba(0,0,0,.08)}
+  .pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:28px;margin-top:48px}
+  .pcard{grid-column:span 2;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;scroll-margin-top:110px}
+  .pcard:nth-child(4){grid-column:2 / span 2}
+  .pcard:nth-child(5){grid-column:4 / span 2}
+  .pcard .ph{position:relative;height:250px;overflow:hidden;background:#333}
+  .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+  .pcard:hover .ph img{transform:scale(1.04)}
+  .pcard .tag{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.95);color:var(--navy);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:6px 10px;font-weight:500}
+  .pcard .bd{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+  .pcard .kicker{margin-bottom:10px}
+  .pcard h3{font-size:28px;margin-bottom:10px}
+  .pcard p{font-size:14.5px;color:var(--gray);margin-bottom:22px;flex:1}
+  .pcard .acts{display:flex;gap:10px;flex-wrap:wrap}
+  @media (max-width:1000px){ .pgrid{grid-template-columns:1fr 1fr} .pcard,.pcard:nth-child(4),.pcard:nth-child(5){grid-column:auto} }
+  @media (max-width:640px){ .pgrid{grid-template-columns:1fr} }

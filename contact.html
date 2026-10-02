@@ -8,7 +8,7 @@
 <link rel="icon" href="img/bgv_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Nunito+Sans:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <div class="draft">Draft for review</div>
@@ -19,9 +19,9 @@
       <img class="dark" src="img/bgv_logo.png" alt="Breckenridge Grand Vacations">
       <span class="hosp">Hospitality</span>
     </a>
-    <nav class="links"><a href="skjol.html">Skjól</a><a href="imperial.html">Imperial</a><a href="experiences.html">Experiences</a><a href="owners.html">Owners</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></nav>
+    <nav class="links"><a href="properties.html">Properties</a><a href="experiences.html">Experiences</a><a href="owners.html">Owners</a><a href="about.html">About</a><a href="https://www.bgvjobs.com" target="_blank" rel="noopener">Employment</a><a href="contact.html" class="active">Contact</a></nav>
     <div class="cta">
-      <a class="btn light sm" href="contact.html?intent=stay">Book a stay</a>
+      <a class="btn light sm" href="properties.html#book">Book a stay</a>
       <button class="hamb" aria-label="Menu">≡</button>
     </div>
   </div>
@@ -48,7 +48,7 @@
       <div class="row"><input placeholder="First name" required><input placeholder="Last name" required></div>
       <div class="row"><input type="email" placeholder="Email" required><input type="tel" placeholder="Phone"></div>
       <select id="f_intent"><option>I am planning a stay</option><option>I own at Skjól</option><option>I own at the Imperial</option><option>I am considering buying</option></select>
-      <select id="f_dest"><option>Skjól, Avon</option><option>Imperial, Breckenridge</option><option>Either</option></select>
+      <select id="f_dest"><option>Grand Colorado on Peak 8</option><option>Grand Lodge on Peak 7</option><option>Grand Timber Lodge</option><option>Imperial, Breckenridge</option><option>Skjól, Avon</option><option>Not sure yet</option></select>
       <textarea id="f_msg" rows="5" placeholder="Dates, group size, anything we should know"></textarea>
       <button class="btn solid" type="submit">Send</button>
     </form>
@@ -62,7 +62,7 @@
     const intent=q.get('intent'), dest=(q.get('dest')||'').toLowerCase();
     const fi=document.getElementById('f_intent'), fd=document.getElementById('f_dest'), fm=document.getElementById('f_msg');
     if(intent==='owner') fi.selectedIndex=1;
-    if(dest.includes('imperial')) fd.selectedIndex=1; else if(dest.includes('skj')) fd.selectedIndex=0;
+    const map={'grand-colorado':0,'grand-lodge':1,'grand-timber':2,'imperial':3,'skjol':4}; for(const k in map){ if(dest.includes(k) || (k==='skjol'&&dest.includes('skj'))) fd.selectedIndex=map[k]; }
     const parts=[];
     if(q.get('in')) parts.push('Check in '+q.get('in'));
     if(q.get('out')) parts.push('check out '+q.get('out'));
@@ -75,11 +75,11 @@
     <div class="grid">
       <div>
         <img class="logo" src="img/bgv_logo_white.png" alt="Breckenridge Grand Vacations">
-        <p>BGV Hospitality operates the private residences at Skjól, Avon and the Imperial Hotel &amp; Private Residences, Breckenridge.</p>
+        <p>Grand Colorado on Peak 8, Grand Lodge on Peak 7, Grand Timber Lodge, the Imperial Hotel &amp; Private Residences and Skjól.</p>
       </div>
-      <div><h5>Stay</h5><a href="skjol.html">Skjól, Avon</a><a href="imperial.html">Imperial, Breckenridge</a><a href="experiences.html">Experiences</a><a href="contact.html?intent=stay">Book a stay</a></div>
+      <div><h5>Stay</h5><a href="properties.html">Properties</a><a href="properties.html#grand-colorado">Grand Colorado on Peak 8</a><a href="properties.html#grand-lodge">Grand Lodge on Peak 7</a><a href="properties.html#grand-timber">Grand Timber Lodge</a><a href="experiences.html">Experiences</a></div>
       <div><h5>Owners</h5><a href="owners.html#rental">Rental &amp; Homecare</a><a href="owners.html#homecare">Homecare only</a><a href="owners.html#fees">Fees and programs</a><a href="owners.html#enroll">Enroll</a></div>
-      <div><h5>BGV</h5><a href="https://breckenridgegrandvacations.com" target="_blank" rel="noopener">Breckenridge Grand Vacations</a><a href="https://skjolavon.com" target="_blank" rel="noopener">SkjolAvon.com</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div><h5>BGV</h5><a href="https://breckenridgegrandvacations.com" target="_blank" rel="noopener">Breckenridge Grand Vacations</a><a href="https://skjolavon.com" target="_blank" rel="noopener">SkjolAvon.com</a><a href="about.html">About</a><a href="https://www.bgvjobs.com" target="_blank" rel="noopener">Employment</a><a href="contact.html">Contact</a></div>
     </div>
     <div class="fine">&copy; 2026 Peak Resorts Management LLC, dba Breckenridge Grand Vacations, and BGV Hospitality, LLC. Renderings and photography are representative only. Skjól is under development and is not yet complete; all amenities, features and information are illustrative and may change without notice. This is not an offer to sell nor the solicitation of an offer to purchase. Draft website for internal review.</div>
   </div>
